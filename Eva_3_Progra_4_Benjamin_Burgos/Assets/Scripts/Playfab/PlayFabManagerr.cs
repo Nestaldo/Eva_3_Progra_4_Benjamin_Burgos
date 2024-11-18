@@ -14,9 +14,6 @@ public class PlayFabManagerr : MonoBehaviour
     public TMP_InputField RegisterPasswordInput;
     public TMP_InputField registerRepeatPasswordInput;
 
-    private string playfabId;
-    private string sessionTicket;
-    public Toggle toggle;
     private void Start()
     {
         if(toggle == true)
@@ -50,6 +47,9 @@ public class PlayFabManagerr : MonoBehaviour
     public TextMeshProUGUI loginMessageText;
     public TMP_InputField loginEmailInput;
     public TMP_InputField loginPasswordInput;
+    private string playfabId;
+    private string sessionTicket;
+    public Toggle toggle;
 
     public void LoginButton()
     {
