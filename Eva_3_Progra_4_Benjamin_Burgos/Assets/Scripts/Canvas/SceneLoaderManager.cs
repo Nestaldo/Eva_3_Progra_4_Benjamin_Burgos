@@ -9,6 +9,11 @@ public class SceneLoaderManager : MonoBehaviour
     public Canvas mainMenuCanvas;
     public Canvas logicAccCanvas;
 
+
+    public void IsLogedStartGame()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void DesactivateCanvasMainMenu()
     {
         mainMenuCanvas.gameObject.SetActive(false);

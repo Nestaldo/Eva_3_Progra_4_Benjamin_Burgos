@@ -14,25 +14,29 @@ public class LoginPlayfabManager : MonoBehaviour
     private string playfabId;
     private string sessionTicket;
     public Toggle toggle;
+    private bool isLoged = false;
+    [SerializeField] SceneLoaderManager sceneLoaderManager;
 
     private void Start()
     {
         if(toggle == true)
         {
             Autologin();
-            InvokeRepeating(nameof(KeepSessionAlive), 0, 900);
+            //InvokeRepeating(nameof(KeepSessionAlive), 0, 900);
         }
     }
     public void LoginButton()
     {
         var request = new LoginWithEmailAddressRequest { Email = loginUserInput.text, Password = loginPasswordInput.text };
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginsuccess, OnError);
+        sceneLoaderManager.IsLogedStartGame();
     }
     void OnLoginsuccess(LoginResult result)
     {
         loginMessageText.text = "Logged in!";
         playfabId = result.PlayFabId;
         sessionTicket = result.SessionTicket;
+        sceneLoaderManager.IsLogedStartGame();
     }
     void OnError(PlayFabError msg)
     {
@@ -50,6 +54,7 @@ public class LoginPlayfabManager : MonoBehaviour
         }
         var requestt = new LoginWithCustomIDRequest { CustomId = customId, CreateAccount = true };
         PlayFabClientAPI.LoginWithCustomID(requestt, OnLoginsuccess, OnError);
+        sceneLoaderManager.IsLogedStartGame();
     }
     void KeepSessionAlive()
     {
