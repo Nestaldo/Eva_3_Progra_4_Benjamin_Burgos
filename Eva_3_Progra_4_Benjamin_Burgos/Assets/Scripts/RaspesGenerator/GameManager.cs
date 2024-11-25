@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         raspeGenerator.GenerateCats();
+
     }
 
     private void Update()

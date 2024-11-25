@@ -15,7 +15,7 @@ MonoBehaviour:
   TitleId: F9576
   DeveloperSecretKey: SD7M19KJ86QQHODGP9YTQDFNI3ITZHS7ORU4XTHTNNFFMEBY14
   ProductionEnvironmentUrl: 
-  RequestType: 2
+  RequestType: 0
   DisableDeviceInfo: 0
   DisableFocusTimeCollection: 0
   RequestTimeout: 2000

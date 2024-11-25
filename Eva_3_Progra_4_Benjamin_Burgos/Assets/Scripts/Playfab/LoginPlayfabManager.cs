@@ -3,6 +3,7 @@ using PlayFab;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class LoginPlayfabManager : MonoBehaviour
 {
@@ -12,24 +13,27 @@ public class LoginPlayfabManager : MonoBehaviour
     public TMP_InputField loginPasswordInput;
 
     private string playfabId;
+    //private bool isLoged = false;
     private string sessionTicket;
-    public Toggle toggle;
-    private bool isLoged = false;
     [SerializeField] SceneLoaderManager sceneLoaderManager;
+    public Toggle toggle;
+
 
     private void Start()
     {
         if(toggle == true)
         {
-            Autologin();
+            //Autologin();
             //InvokeRepeating(nameof(KeepSessionAlive), 0, 900);
         }
     }
     public void LoginButton()
     {
-        var request = new LoginWithEmailAddressRequest { Email = loginUserInput.text, Password = loginPasswordInput.text };
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginsuccess, OnError);
-        sceneLoaderManager.IsLogedStartGame();
+        if(loginUserInput.text != null && loginPasswordInput.text != null)
+        {
+            var request = new LoginWithEmailAddressRequest { Email = loginUserInput.text, Password = loginPasswordInput.text };
+            PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginsuccess, OnError);
+        }
     }
     void OnLoginsuccess(LoginResult result)
     {
@@ -43,6 +47,7 @@ public class LoginPlayfabManager : MonoBehaviour
         print(msg.ErrorMessage);
         loginMessageText.text = msg.ErrorMessage;
     }
+
 
     void Autologin()
     {

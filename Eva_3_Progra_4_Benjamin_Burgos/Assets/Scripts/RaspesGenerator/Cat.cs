@@ -130,7 +130,37 @@ public class Cat : MonoBehaviour
 
     void ShowDecimas()
     {
+        print(value);
+        //aca termino el juego
         vfxSfx.ShowDecimas(value);
+
+        LoadData();
+    }
+
+    void LoadData()
+    {
+        LoadSaveSystem loadDava = new LoadSaveSystem();
+        loadDava.LoadData<PlayerData>("playerData", SaveData);
+    }
+
+    void SaveData(PlayerData playerData)
+    {
+        LoadSaveSystem loadDava = new LoadSaveSystem();
+        PlayerData tempPlayerData = playerData;
+        tempPlayerData.decimas += value;
+        loadDava.SaveData(tempPlayerData, "playerData", OnEndSave);
+    }
+
+    void OnEndSave(bool isSucces)
+    {
+        if(isSucces)
+        {
+            print("yeeeeiii");
+        }
+        else
+        {
+            print("Nohhh");
+        }
     }
 
     private void OnMouseEnter()
