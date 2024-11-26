@@ -2050,18 +2050,18 @@ PrefabInstance:
     - target: {fileID: 3444131938551071643, guid: be33ed3cf2961fb44b3f5c05f063010a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 325418730}
+      objectReference: {fileID: 997332900}
     - target: {fileID: 3444131938551071643, guid: be33ed3cf2961fb44b3f5c05f063010a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3444131938551071643, guid: be33ed3cf2961fb44b3f5c05f063010a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoginButton
+      value: LoadDecimasMenuScene
       objectReference: {fileID: 0}
     - target: {fileID: 3444131938551071643, guid: be33ed3cf2961fb44b3f5c05f063010a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LoginPlayfabManager, Assembly-CSharp
+      value: SceneLoaderManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3444131938551071643, guid: be33ed3cf2961fb44b3f5c05f063010a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
