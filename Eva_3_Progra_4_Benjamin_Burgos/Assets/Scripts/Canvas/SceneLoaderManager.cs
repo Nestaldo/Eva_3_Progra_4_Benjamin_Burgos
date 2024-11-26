@@ -22,4 +22,8 @@ public class SceneLoaderManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void LoadRecoveryAccountScene()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

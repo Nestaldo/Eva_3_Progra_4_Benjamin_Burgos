@@ -17,16 +17,6 @@ public class LoginPlayfabManager : MonoBehaviour
     private string sessionTicket;
     [SerializeField] SceneLoaderManager sceneLoaderManager;
     public Toggle toggle;
-
-
-    //private void Start()
-    //{
-    //    if(toggle == true)
-    //    {
-    //        Autologin();
-    //        InvokeRepeating(nameof(KeepSessionAlive), 0, 900);
-    //    }
-    //}
     public void LoginButton()
     {
         if(loginUserInput.text != null && loginPasswordInput.text != null)

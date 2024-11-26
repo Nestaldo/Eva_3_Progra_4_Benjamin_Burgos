@@ -253,6 +253,14 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_InputType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_ContentType
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1867312666697129814, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_text
       value: 'Password :'
@@ -1153,6 +1161,14 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_InputType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_ContentType
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1867312666697129814, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_text
       value: 'Repeat Password :'
@@ -1476,6 +1492,18 @@ PrefabInstance:
     - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_ContentType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_KeyboardType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_CharacterValidation
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1867312666697129814, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_text

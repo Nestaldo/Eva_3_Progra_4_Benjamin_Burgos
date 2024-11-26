@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DecimasMenuScene.unity
     guid: 2d591c991e0a91c4390a4cce7f98158c
+  - enabled: 1
+    path: Assets/Scenes/RecoveryAccountScene.unity
+    guid: d06d2fe9d23182140bd581df92294559
   m_configObjects: {}
