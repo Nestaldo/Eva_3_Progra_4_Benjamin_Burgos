@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
-using UnityEditor.PackageManager;
 
 public class CanvasDecimasMenu : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class CanvasDecimasMenu : MonoBehaviour
     [SerializeField] GameObject ramo1;
     [SerializeField] GameObject ramo2;
     [SerializeField] GameObject ramo3;
+    [SerializeField] GameObject claveProfe;
 
     [SerializeField] TMP_Text decimasText;
 
@@ -28,6 +28,7 @@ public class CanvasDecimasMenu : MonoBehaviour
         ramo1.SetActive(false);
         ramo2.SetActive(false);
         ramo3.SetActive(false);
+        claveProfe.SetActive(false);
     }
     public void ActivateRamo1()
     {
@@ -35,6 +36,7 @@ public class CanvasDecimasMenu : MonoBehaviour
         DesactivateVerticalGridLayout();
         ramo2.SetActive(false);
         ramo3.SetActive(false);
+        claveProfe.SetActive(false);
     }
     public void ActivateRamo2()
     {
@@ -42,6 +44,7 @@ public class CanvasDecimasMenu : MonoBehaviour
         DesactivateVerticalGridLayout();
         ramo1.SetActive(false);
         ramo3.SetActive(false);
+        claveProfe.SetActive(false);
     }
     public void ActivateRamo3()
     {
@@ -49,6 +52,15 @@ public class CanvasDecimasMenu : MonoBehaviour
         DesactivateVerticalGridLayout();
         ramo1 .SetActive(false);
         ramo2 .SetActive(false);
+        claveProfe.SetActive(false);
+    }
+    public void ActivatePassProfe()
+    {
+        claveProfe.SetActive(true);
+        ramo3.SetActive(false);
+        ramo1.SetActive(false);
+        ramo2.SetActive(false);
+        DesactivateVerticalGridLayout();
     }
     public void CheckLoginAndFetchDecimas()
     {
@@ -92,6 +104,6 @@ public class CanvasDecimasMenu : MonoBehaviour
     }
     private void UpdateDecimasText(float decimas)
     {
-        decimasText.text = decimas.ToString();
+        decimasText.text = ("Decimas Disponibles : " + decimas.ToString());
     }
 }
