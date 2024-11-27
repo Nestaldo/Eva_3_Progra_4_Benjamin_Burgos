@@ -17,6 +17,24 @@ public class LoginPlayfabManager : MonoBehaviour
     private string sessionTicket;
     [SerializeField] SceneLoaderManager sceneLoaderManager;
     public Toggle toggle;
+
+    private static LoginPlayfabManager instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public bool IsLoggedIn()
+    {
+        return PlayFabClientAPI.IsClientLoggedIn();
+    }
     public void LoginButton()
     {
         if(loginUserInput.text != null && loginPasswordInput.text != null)
@@ -30,7 +48,7 @@ public class LoginPlayfabManager : MonoBehaviour
         loginMessageText.text = "Logged in!";
         playfabId = result.PlayFabId;
         sessionTicket = result.SessionTicket;
-        sceneLoaderManager.IsLogedStartGame();
+        sceneLoaderManager.LoadDecimasMenuScene();
     }
     void OnError(PlayFabError msg)
     {

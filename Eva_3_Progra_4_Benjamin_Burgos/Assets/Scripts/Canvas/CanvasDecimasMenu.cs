@@ -16,6 +16,8 @@ public class CanvasDecimasMenu : MonoBehaviour
 
     [SerializeField] TMP_Text decimasText;
 
+    [SerializeField] LoginPlayfabManager loginPlayfabManager;
+
     public void DesactivateVerticalGridLayout()
     {
         VerticalGridLayout.SetActive(false);
@@ -47,6 +49,17 @@ public class CanvasDecimasMenu : MonoBehaviour
         DesactivateVerticalGridLayout();
         ramo1 .SetActive(false);
         ramo2 .SetActive(false);
+    }
+    public void CheckLoginAndFetchDecimas()
+    {
+        if(loginPlayfabManager!= null && loginPlayfabManager.IsLoggedIn())
+        {
+            FetchDecimasFromPlayfab();
+        }
+        else
+        {
+            Debug.LogWarning("Sesion no iniciada o no encontrada");
+        }
     }
     public void FetchDecimasFromPlayfab()
     {
