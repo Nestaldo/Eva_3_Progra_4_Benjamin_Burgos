@@ -18,7 +18,7 @@ public class LoginPlayfabManager : MonoBehaviour
     [SerializeField] SceneLoaderManager sceneLoaderManager;
     public Toggle toggle;
 
-    private static LoginPlayfabManager instance;
+    public static LoginPlayfabManager instance;
     private void Awake()
     {
         if(instance == null)

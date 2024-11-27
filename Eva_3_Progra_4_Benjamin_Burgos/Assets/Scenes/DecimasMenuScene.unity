@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1747,11 +1747,27 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1525667015}
     m_Modifications:
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_LineType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_InputType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 719635794027594681, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_ContentType
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1867312666697129814, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_text
       value: 'Insert Teacher Password
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867312666697129814, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_margin.z
+      value: -801.4979
       objectReference: {fileID: 0}
     - target: {fileID: 3903092818705605038, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_Name
@@ -1835,6 +1851,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5995393829149654602, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252468576108478736, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
+      propertyPath: m_enableWordWrapping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8542176097117262538, guid: b70fc74e69a1f0140be075ace08a7c88, type: 3}
