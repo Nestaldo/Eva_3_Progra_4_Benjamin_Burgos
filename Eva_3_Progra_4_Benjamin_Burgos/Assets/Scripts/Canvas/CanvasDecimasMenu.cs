@@ -32,6 +32,7 @@ public class CanvasDecimasMenu : MonoBehaviour
     }
     public void ActivateRamo1()
     {
+        LoginPlayfabManager.Instance.SelectRamo("Ramo1");
         ramo1.SetActive(true);
         DesactivateVerticalGridLayout();
         ramo2.SetActive(false);
@@ -40,6 +41,7 @@ public class CanvasDecimasMenu : MonoBehaviour
     }
     public void ActivateRamo2()
     {
+        LoginPlayfabManager.Instance.SelectRamo("Ramo2");
         ramo2.SetActive(true);
         DesactivateVerticalGridLayout();
         ramo1.SetActive(false);
@@ -48,6 +50,7 @@ public class CanvasDecimasMenu : MonoBehaviour
     }
     public void ActivateRamo3()
     {
+        LoginPlayfabManager.Instance.SelectRamo("Ramo3");
         ramo3 .SetActive(true);
         DesactivateVerticalGridLayout();
         ramo1 .SetActive(false);

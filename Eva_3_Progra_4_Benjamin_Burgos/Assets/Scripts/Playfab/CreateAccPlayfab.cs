@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class CreateAccPlayfab : MonoBehaviour
 {
+    [SerializeField] GameObject panelPaQnoToquenNa;
+    [SerializeField] SceneLoaderManager sceneLoaderManager;
     [Header("Register UI")]
     public TextMeshProUGUI registerMessageText;
     public TMP_InputField registerEmailInput;
@@ -26,14 +28,18 @@ public class CreateAccPlayfab : MonoBehaviour
         }
         var request = new RegisterPlayFabUserRequest { Email = registerEmailInput.text, Password = RegisterPasswordInput.text, RequireBothUsernameAndEmail = false };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSucess, OnError);
+        panelPaQnoToquenNa.SetActive(true);
     }
     void OnRegisterSucess(RegisterPlayFabUserResult result)
     {
         registerMessageText.text = "Success Register!";
+        sceneLoaderManager.LoadDecimasMenuScene();
+        panelPaQnoToquenNa.SetActive(false);
     }
     void OnError(PlayFabError msg)
     {
         print(msg.ErrorMessage);
         registerMessageText.text = msg.ErrorMessage;
+        panelPaQnoToquenNa.SetActive(false);
     }
 }

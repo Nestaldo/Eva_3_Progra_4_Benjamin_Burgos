@@ -13,7 +13,7 @@ public class SesionIniciadaComo : MonoBehaviour
     }
     public void CheckLoginAndShowAccountName()
     {
-        if (LoginPlayfabManager.instance != null && LoginPlayfabManager.instance.IsLoggedIn())
+        if (LoginPlayfabManager.Instance != null && LoginPlayfabManager.Instance.IsLoggedIn())
         {
             PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(), OnSuccesGettingDataUser, OnError);
         }

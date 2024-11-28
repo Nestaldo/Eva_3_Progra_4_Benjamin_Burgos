@@ -12,18 +12,20 @@ public class LoginPlayfabManager : MonoBehaviour
     public TMP_InputField loginUserInput;
     public TMP_InputField loginPasswordInput;
 
+    [SerializeField] GameObject panelPaQueNoToqueNa;
     private string playfabId;
     //private bool isLoged = false;
     private string sessionTicket;
     [SerializeField] SceneLoaderManager sceneLoaderManager;
     public Toggle toggle;
+    string currentRamo;
 
-    public static LoginPlayfabManager instance;
+    public static LoginPlayfabManager Instance;
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -41,6 +43,7 @@ public class LoginPlayfabManager : MonoBehaviour
         {
             var request = new LoginWithEmailAddressRequest { Email = loginUserInput.text, Password = loginPasswordInput.text };
             PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginsuccess, OnError);
+            panelPaQueNoToqueNa.SetActive(true);
         }
     }
     void OnLoginsuccess(LoginResult result)
@@ -49,11 +52,13 @@ public class LoginPlayfabManager : MonoBehaviour
         playfabId = result.PlayFabId;
         sessionTicket = result.SessionTicket;
         sceneLoaderManager.LoadDecimasMenuScene();
+        panelPaQueNoToqueNa.SetActive(false);
     }
     void OnError(PlayFabError msg)
     {
         print(msg.ErrorMessage);
         loginMessageText.text = msg.ErrorMessage;
+        panelPaQueNoToqueNa.SetActive(false);
     }
 
 
@@ -80,4 +85,14 @@ public class LoginPlayfabManager : MonoBehaviour
         Debug.Log("La sesion ha expirado, intentando reconectar...");
         Autologin();
     }
+
+    public void SelectRamo(string ramo)
+    {
+        currentRamo = ramo;
+    }
+
+    public string GetRamoSelected()
+    {
+        return currentRamo;
+    }    
 }
