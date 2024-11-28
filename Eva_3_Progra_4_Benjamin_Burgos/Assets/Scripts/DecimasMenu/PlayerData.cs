@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class PlayerData 
+public class PlayerData
 {
-    public string noname;
-    public float decimas;
+    public float decimasRamo1;
+    public float decimasRamo2;
+    public float decimasRamo3;
 }

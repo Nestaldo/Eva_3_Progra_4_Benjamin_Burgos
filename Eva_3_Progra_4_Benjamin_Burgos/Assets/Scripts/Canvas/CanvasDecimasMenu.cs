@@ -86,7 +86,7 @@ public class CanvasDecimasMenu : MonoBehaviour
             PlayerData playerData = JsonUtility.FromJson<PlayerData>(playerDataJson);
             if (playerData != null)
             {
-                UpdateDecimasText(playerData.decimas);
+                UpdateDecimasText(playerData.decimasRamo1);
             }
             else
             {

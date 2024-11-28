@@ -147,7 +147,7 @@ public class Cat : MonoBehaviour
     {
         LoadSaveSystem loadDava = new LoadSaveSystem();
         PlayerData tempPlayerData = playerData;
-        tempPlayerData.decimas += value;
+        tempPlayerData.decimasRamo1 += value;
         loadDava.SaveData(tempPlayerData, "playerData", OnEndSave);
     }
 
