@@ -1,3 +1,5 @@
+using PlayFab;
+using PlayFab.ClientModels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -145,10 +147,41 @@ public class Cat : MonoBehaviour
 
     void SaveData(PlayerData playerData)
     {
-        LoadSaveSystem loadDava = new LoadSaveSystem();
+        LoadSaveSystem LoadData = new LoadSaveSystem();
         PlayerData tempPlayerData = playerData;
-        tempPlayerData.decimasRamo1 += value;
-        loadDava.SaveData(tempPlayerData, "playerData", OnEndSave);
+
+        string ramoActivo = LoginPlayfabManager.Instance.currentRamo;
+        switch (ramoActivo) 
+        {
+            case "Ramo1":
+                tempPlayerData.decimasRamo1 += value;
+                break;
+            case "Ramo2":
+                tempPlayerData.decimasRamo2 += value;
+                break;
+            case "Ramo3":
+                tempPlayerData.decimasRamo3 += value;
+                break;
+            default:
+                Debug.LogWarning("Ramo desconocido, selecciona un ramo valido");
+                    return;
+        }
+
+        LoadData.SaveData(tempPlayerData, "playerData", OnEndSave);
+    }
+    void SaveDataToPlayfab(PlayerData playerData)
+    {
+        string playerDataJson = JsonUtility.ToJson(playerData);
+
+        PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string> {
+            { "playerData", playerDataJson }
+        }
+        },
+        result => Debug.Log("Datos guardados en PlayFab correctamente."),
+        error => Debug.LogError("Error al guardar en PlayFab: " + error.GenerateErrorReport()));
+
     }
 
     void OnEndSave(bool isSucces)
@@ -156,6 +189,8 @@ public class Cat : MonoBehaviour
         if(isSucces)
         {
             print("yeeeeiii");
+            LoadSaveSystem loadDava = new LoadSaveSystem();
+            loadDava.LoadData<PlayerData>("playerData", SaveDataToPlayfab);
         }
         else
         {

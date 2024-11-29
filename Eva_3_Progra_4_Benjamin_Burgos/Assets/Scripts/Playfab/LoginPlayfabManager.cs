@@ -14,11 +14,10 @@ public class LoginPlayfabManager : MonoBehaviour
 
     [SerializeField] GameObject panelPaQueNoToqueNa;
     private string playfabId;
-    //private bool isLoged = false;
     private string sessionTicket;
     [SerializeField] SceneLoaderManager sceneLoaderManager;
     public Toggle toggle;
-    string currentRamo;
+    public string currentRamo;
 
     public static LoginPlayfabManager Instance;
     private void Awake()

@@ -427,6 +427,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5985634496115995770, guid: ca959b1495e504744bbda4dcfb711eed, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985634496115995770, guid: ca959b1495e504744bbda4dcfb711eed, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -781,6 +785,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5735058425192037107}
     m_Modifications:
+    - target: {fileID: 4468599333161568146, guid: 6f7962aca70932242be2f8e384e1f4a2, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468599333161568146, guid: 6f7962aca70932242be2f8e384e1f4a2, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588322024115041151, guid: 6f7962aca70932242be2f8e384e1f4a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588322024115041151, guid: 6f7962aca70932242be2f8e384e1f4a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588322024115041151, guid: 6f7962aca70932242be2f8e384e1f4a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4588322024115041151, guid: 6f7962aca70932242be2f8e384e1f4a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
